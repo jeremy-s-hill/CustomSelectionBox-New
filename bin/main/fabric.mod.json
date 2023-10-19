@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "csbupdate",
+  "version": "${version}",
+  "name": "Custom Selection Box Fabric Update",
+  "description": " (Update) Custom Selection Box shows you a clear and concise selection box that you can set to your own preferences. Sometimes it may be very unclear as to what you’re setting your sights on and which item you are trying to highlight to either edit, destroy or even place. Now the box is much clearer and completely editable to fit your needs.",
+  "authors": [
+    "shedaniel",
+    "QuestionMore(Update)"
+  ],
+  "contact": {},
+  "license": "Apache-2.0",
+  "icon": "assets/csbupdate/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.csbupdate.CSB",
+      "net.csbupdate.CSBConfig"
+    ],
+    "csb_renderers": [
+      "net.csbupdate.CSBDefaultRenderer"
+    ]
+  },
+  "mixins": [
+    "csbupdate.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "fabric": "*",
+    "minecraft": "1.20.1"
+  }
+}

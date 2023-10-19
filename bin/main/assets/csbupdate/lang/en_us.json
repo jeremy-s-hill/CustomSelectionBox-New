@@ -1,0 +1,20 @@
+{
+  "gui.csb_update.chroma": "Chroma: %s",
+  "gui.csb_update.title": "Custom Selection Box",
+  "gui.csb_update.on": "ON",
+  "gui.csb_update.off": "OFF",
+  "gui.csb_update.link_blocks": "Link Blocks: %s",
+  "gui.csb_update.enabled": "Enabled: %s",
+  "gui.csb_update.true": "True",
+  "gui.csb_update.false": "False",
+  "gui.csb_update.save": "False",
+  "gui.csb_update.csb_defaults": "CSB defaults",
+  "gui.csb_update.mc_defaults": "MC defaults",
+  "gui.csb_update.red": "Red: %d",
+  "gui.csb_update.green": "Green: %d",
+  "gui.csb_update.blue": "Blue: %d",
+  "gui.csb_update.outline_alpha": "Outline Alpha: %d",
+  "gui.csb_update.outline_thickness": "Outline Thickness: %d",
+  "gui.csb_update.blink_alpha": "Blink Alpha: %d",
+  "gui.csb_update.blink_speed": "Blink Speed: %d"
+}
