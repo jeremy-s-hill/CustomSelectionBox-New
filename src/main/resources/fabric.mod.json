@@ -19,6 +19,9 @@
     ],
     "csb_renderers": [
       "net.csbupdate.CSBDefaultRenderer"
+    ],
+    "modmenu": [
+      "net.csbupdate.CSBUpdateModMenuAPI"
     ]
   },
   "mixins": [
@@ -28,5 +31,10 @@
     "fabricloader": ">=0.14.22",
     "fabric": "*",
     "minecraft": "1.20.1"
+  },
+  "custom": {
+    "modmenu": {
+      "update_checker": false
+    }
   }
 }
