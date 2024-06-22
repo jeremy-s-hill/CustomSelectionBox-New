@@ -28,26 +28,13 @@ public class CSBSliderWidget extends SliderWidget {
     
     private void updateValue(int id) {
         switch (id) {
-            case 1:
-                setRed(getValue());
-                break;
-            case 2:
-                setGreen(getValue());
-                break;
-            case 3:
-                setBlue(getValue());
-                break;
-            case 4:
-                CSBConfig.setAlpha(getValue());
-                break;
-            case 5:
-                setThickness(getValue() * 7);
-                break;
-            case 7:
-                setBlinkAlpha(getValue());
-                break;
-            case 8:
-                setBlinkSpeed(getValue());
+            case 1 -> setRed(getValue());
+            case 2 -> setGreen(getValue());
+            case 3 -> setBlue(getValue());
+            case 4 -> CSBConfig.setAlpha(getValue());
+            case 5 -> setThickness(getValue() * 7);
+            case 7 -> setBlinkAlpha(getValue());
+            case 8 -> setBlinkSpeed(getValue());
         }
     }
     
@@ -67,5 +54,4 @@ public class CSBSliderWidget extends SliderWidget {
             default -> Text.of("Option Error?! (" + id + ")");
         };
     }
-    
 }

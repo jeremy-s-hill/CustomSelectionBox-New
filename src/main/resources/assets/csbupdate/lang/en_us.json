@@ -7,7 +7,7 @@
   "gui.csb_update.enabled": "Enabled: %s",
   "gui.csb_update.true": "True",
   "gui.csb_update.false": "False",
-  "gui.csb_update.save": "False",
+  "gui.csb_update.save": "Save",
   "gui.csb_update.csb_defaults": "CSB defaults",
   "gui.csb_update.mc_defaults": "MC defaults",
   "gui.csb_update.red": "Red: %d",
