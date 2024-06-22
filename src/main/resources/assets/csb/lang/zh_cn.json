@@ -1,0 +1,20 @@
+{
+  "gui.csb.chroma": "彩虹选择框(Chroma): %s",
+  "gui.csb.title": "自定义选择框",
+  "gui.csb.on": "开启",
+  "gui.csb.off": "关闭",
+  "gui.csb.link_blocks": "相连方块同框: %s",
+  "gui.csb.enabled": "已启动: %s",
+  "gui.csb.true": "是",
+  "gui.csb.false": "否",
+  "gui.csb.save": "保存配置",
+  "gui.csb.csb_defaults": "CSB默认配置",
+  "gui.csb.mc_defaults": "MC默认配置",
+  "gui.csb.red": "红色: %d",
+  "gui.csb.green": "绿色: %d",
+  "gui.csb.blue": "蓝色: %d",
+  "gui.csb.outline_alpha": "外框线强度(alpha): %d",
+  "gui.csb.outline_thickness": "外框线宽度: %d",
+  "gui.csb.blink_alpha": "表面闪烁光效强度(alpha): %d",
+  "gui.csb.blink_speed": "表面闪烁光效频率: %d"
+}

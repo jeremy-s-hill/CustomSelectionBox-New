@@ -72,5 +72,5 @@ public interface CSBRenderer {
         return getInfo().getInnerAlpha();
     }
     
-    ActionResult render(ClientWorld world, Camera camera, BlockHitResult hitResult, float delta);
+    ActionResult render(ClientWorld world, Camera camera, BlockHitResult hitResult);
 }

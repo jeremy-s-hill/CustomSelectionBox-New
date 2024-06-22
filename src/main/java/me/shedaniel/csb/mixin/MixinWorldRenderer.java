@@ -8,11 +8,10 @@ import net.minecraft.client.render.*;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Matrix4f;
+import org.joml.Matrix4f;
 import net.minecraft.util.shape.VoxelShape;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -40,11 +39,10 @@ public abstract class MixinWorldRenderer implements CSBInfo {
     @Unique private float a = 0f;
     @Unique private float blinkingAlpha = 0f;
     @Shadow private ClientWorld world;
-    
-    @Shadow
-    private static void drawShapeOutline(MatrixStack matrixStack, VertexConsumer vertexConsumer, VoxelShape voxelShape, double d, double e, double f, float g, float h, float i, float j) {
-    }
-    
+
+    @Shadow protected abstract void drawBlockOutline(MatrixStack matrices, VertexConsumer vertexConsumer, Entity entity, double cameraX, double cameraY, double cameraZ, BlockPos pos, BlockState state);
+
+
     @Shadow @Final private MinecraftClient client;
     
     @Redirect(method = "render", at = @At(value = "INVOKE",
@@ -52,8 +50,7 @@ public abstract class MixinWorldRenderer implements CSBInfo {
                                           ordinal = 0))
     private void onDrawShapeOutline(WorldRenderer worldRenderer, MatrixStack matrixStack, VertexConsumer vertexConsumer, Entity entity, double d, double e, double f, BlockPos blockPos, BlockState blockState) {
         if (!isEnabled()) {
-            drawShapeOutline(matrixStack, vertexConsumer, blockState.getOutlineShape(world, blockPos, EntityContext.of(entity)), blockPos.getX() - d, blockPos.getY() - e, blockPos.getZ() - f, 0.0F, 0.0F, 0.0F, 0.4F);
-            return;
+            drawBlockOutline(matrixStack, vertexConsumer, entity, d, e, f, blockPos, blockState);            return;
         }
         render = true;
     }
@@ -78,7 +75,7 @@ public abstract class MixinWorldRenderer implements CSBInfo {
             BlockHitResult hitResult = (BlockHitResult) client.crosshairTarget;
             BlockPos blockPos = hitResult.getBlockPos();
             for (CSBRenderer renderer : RENDERERS) {
-                ActionResult result = Objects.requireNonNull(renderer.render(world, camera, hitResult, delta));
+                ActionResult result = Objects.requireNonNull(renderer.render(world, camera, hitResult));
                 if (result != ActionResult.PASS)
                     break;
             }
